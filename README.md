@@ -35,6 +35,9 @@ dotnet new sln -n LinqTutorial &&
   dotnet sln LinqTutorial.sln add LinqTutorial.Tests/
 ```
 
+### excercise-linq-basics-002
+In this excercise, you will need to make an enumerable of 3 zeroes. Google `Enumerable.Repeat` for hints.
+
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
 ```
 chmod 755 check.sh && ./check.sh
