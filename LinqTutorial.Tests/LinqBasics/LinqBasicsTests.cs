@@ -1,13 +1,22 @@
+using System.Collections.Generic;
+using System.Linq;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace LinqTutorial.Tests
+namespace LinqTutorial.Tests.LinqBasics
 {
     [TestClass]
     public class LinqBasicsTests
     {
+        /*
+        In this excercise, you will need to make an enumerable of 3 zeroes. Google `Enumerable.Repeat` for hints.
+        */
         [TestMethod]
-        public void TestMethod1()
+        public void EnumerableRepeat_ReturnsNElements()
         {
+            var range = (IEnumerable<int>)null;
+
+            Assert.IsTrue(new[] { 0, 0, 0 }.SequenceEqual(range));
         }
     }
 }
