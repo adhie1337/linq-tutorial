@@ -39,6 +39,9 @@ dotnet new sln -n LinqTutorial &&
 ### excercise-linq-basics-001
 In this excercise, you will need to make an enumerable of 3 zeroes. Google `Enumerable.Repeat` for hints.
 
+### excercise-linq-basics-002
+In this excercise, you will need to make an enumerable that retruns the numbers 1, 2 and 3. Google `Enumerable.Range` for hints.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:

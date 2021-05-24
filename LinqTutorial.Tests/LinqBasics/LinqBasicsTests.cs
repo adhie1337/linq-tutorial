@@ -18,5 +18,16 @@ namespace LinqTutorial.Tests.LinqBasics
 
             Assert.IsTrue(new[] { 0, 0, 0 }.SequenceEqual(range));
         }
+
+        /*
+        In this excercise, you will need to make an enumerable that retruns the numbers 1, 2 and 3. Google `Enumerable.Range` for hints.
+        */
+        [TestMethod]
+        public void EnumerableRange_ReturnsNElements()
+        {
+            var range = (IEnumerable<int>)null;
+
+            Assert.IsTrue(new[] { 1, 2, 3 }.SequenceEqual(range));
+        }
     }
 }
