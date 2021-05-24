@@ -12,7 +12,7 @@ namespace LinqTutorial.Tests
         [TestMethod]
         public void EnumerableRepeat_ReturnsNElements()
         {
-            var range = (IEnumerable<int>)null;
+            var range = Enumerable.Repeat(0, 3);
 
             var result = range.ToArray();
 
