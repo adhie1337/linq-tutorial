@@ -44,5 +44,18 @@ namespace LinqTutorial.Tests.LinqBasics
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(2), new Horse(3) }.SequenceEqual(result));
         }
+
+        /*
+        The task is exactly the same as in 003, but you will have to use query syntax for this one. Google `Linq query syntax` to get some tips how to do that.
+        */
+        [TestMethod]
+        public void Select_WithQuerySyntax_CreatesHorses()
+        {
+            var range = Enumerable.Range(1, 3);
+
+            var result = (IEnumerable<Horse>)null;
+
+            Assert.IsTrue(new[] { new Horse(1), new Horse(2), new Horse(3) }.SequenceEqual(result));
+        }
     }
 }
