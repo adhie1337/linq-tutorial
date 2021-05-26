@@ -25,7 +25,7 @@ namespace LinqTutorial.Tests.LinqBasics
         [TestMethod]
         public void EnumerableRange_ReturnsNElements()
         {
-            var range = (IEnumerable<int>)null;
+            var range = Enumerable.Range(1, 3);
 
             Assert.IsTrue(new[] { 1, 2, 3 }.SequenceEqual(range));
         }
