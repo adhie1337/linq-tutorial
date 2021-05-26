@@ -66,7 +66,7 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var range = Enumerable.Range(1, 3);
 
-            var result = range.Select(id => new Horse(id));
+            var result = range.Select(id => new Horse(id)).Where(horse => horse.IsLucky);
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(3) }.SequenceEqual(result));
         }
@@ -79,7 +79,11 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var range = Enumerable.Range(1, 3);
 
-            var result = from id in range select new Horse(id);
+            var result =
+                from id in range
+                let horse = new Horse(id) // or you can use alternatively: `select new Horse(id) into horse`
+                where horse.IsLucky
+                select horse;
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(3) }.SequenceEqual(result));
         }
