@@ -8,8 +8,8 @@ namespace LinqTutorial.Tests.LinqBasics
         UnLucky,
     }
 
-    public class Horses
+    public static class Horses
     {
-        // TODO: Add extension method here
+        public static Luck GetLuck(this Horse horse) => horse.IsLucky ? Luck.Lucky : Luck.UnLucky;
     }
 }
