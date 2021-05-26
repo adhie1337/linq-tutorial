@@ -137,7 +137,8 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
 
-            var result = (Dictionary<Luck, int>)null;
+            var result = horses.GroupBy(horse => horse.GetLuck())
+                .ToDictionary(group => group.Key, group => group.Count());
 
             var expected = new Dictionary<Luck, int>()
             {
@@ -155,7 +156,11 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
 
-            var result = (Dictionary<Luck, int>)null;
+            var groups =
+                from horse in horses
+                group horse by horse.GetLuck() into horseGroup
+                select new { horseGroup.Key, Count = horseGroup.Count() };
+            var result = groups.ToDictionary(group => group.Key, group => group.Count);
 
             var expected = new Dictionary<Luck, int>()
             {
