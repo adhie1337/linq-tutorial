@@ -57,5 +57,31 @@ namespace LinqTutorial.Tests.LinqBasics
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(2), new Horse(3) }.SequenceEqual(result));
         }
+
+        /*
+        Your task is to filter the horses to keep only the lucky ones with the `Where` method. Notice the new property `IsLucky` of the `Horse` type. Use method syntax for this test.
+        */
+        [TestMethod]
+        public void Where_WithMethodSyntax_FiltersHorses()
+        {
+            var range = Enumerable.Range(1, 3);
+
+            var result = range.Select(id => new Horse(id));
+
+            Assert.IsTrue(new[] { new Horse(1), new Horse(3) }.SequenceEqual(result));
+        }
+
+        /*
+        Your task is to filter the horses to keep only the lucky ones with the `Where` method. Notice the new property `IsLucky` of the `Horse` type. Use query syntax for this test.
+        */
+        [TestMethod]
+        public void Where_WithQuerySyntax_FiltersHorses()
+        {
+            var range = Enumerable.Range(1, 3);
+
+            var result = from id in range select new Horse(id);
+
+            Assert.IsTrue(new[] { new Horse(1), new Horse(3) }.SequenceEqual(result));
+        }
     }
 }

@@ -48,6 +48,9 @@ Notice we have a new project in the solution: `LinqTutorial.Implementation`. It 
 ### excercise-linq-basics-004
 The task is exactly the same as in 003, but you will have to use query syntax for this one. Google `Linq query syntax` to get some tips how to do that.
 
+### excercise-linq-basics-005
+Your task is to filter the horses to keep only the lucky ones with the `Where` method. Notice the new property `IsLucky` of the `Horse` type.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
