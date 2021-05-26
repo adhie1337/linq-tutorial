@@ -181,7 +181,10 @@ namespace LinqTutorial.Tests.LinqBasics
                 let userId = index % 5
                 select new Bet(id, "user_" + userId, amount);
 
-            var query = (IEnumerable<int>)null;
+            var query =
+                from horse in horses
+                join bet in bets on horse.Id equals bet.HorseId
+                select horse.IsLucky ? bet.Amount : -bet.Amount;
 
             Assert.AreEqual(3000, query.Sum());
         }
@@ -202,7 +205,13 @@ namespace LinqTutorial.Tests.LinqBasics
                 Amount: 500 + 100 * (i % 6)
             ));
 
-            var query = (IEnumerable<int>)null;
+            var query = horses.Join
+            (
+                bets,
+                horse => horse.Id,
+                bet => bet.HorseId,
+                (horse, bet) => horse.IsLucky ? bet.Amount : -bet.Amount
+            );
 
             Assert.AreEqual(3000, query.Sum());
         }
