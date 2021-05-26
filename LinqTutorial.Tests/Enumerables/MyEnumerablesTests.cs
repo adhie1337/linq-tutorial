@@ -20,5 +20,19 @@ namespace LinqTutorial.Tests.Enumerables
             var expected = Enumerable.Range(1, 9);
             Assert.IsTrue(expected.SequenceEqual(range));
         }
+
+        /*
+        Your task is to implement `IEnumerable.MySelect` extension method. You will need to return an instance of `MySelectEnumerable` that is a wrapper enumerable; it takes an `IEnumerable<TSource>` and a `Func<TSource, TResult>` and when the current element is requested it returns the current element of the `IEnumerable<TSource>` with the `Func<TSource, TResult>` applied, therefore a `TResult` instance.
+        */
+        [TestMethod]
+        public void MySelect_AppliesFunction()
+        {
+            var range = Enumerable.Range(1, 9);
+
+            var result = range.MySelect(i => (char)(((int)'a') + i));
+
+            var expected = "bcdefghij";
+            Assert.IsTrue(expected.SequenceEqual(result));
+        }
     }
 }

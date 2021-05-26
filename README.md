@@ -39,6 +39,9 @@ dotnet new sln -n LinqTutorial &&
 ### excercise-enumerables-001
 Your task is to implement `MyEnumerable` that is an implementor of `IEnumerable<int>`. It has a static method that is almost the same as `Enumerable.Range`, but `Enumerable.Range` takes two parameters: the start int, and the number of items to generate, but `MyEnumerable.Range` takes a start int and an end in exclusive.
 
+### excercise-enumerables-002
+Your task is to implement `IEnumerable.MySelect` extension method. You will need to return an instance of `MySelectEnumerable` that is a wrapper enumerable; it takes an `IEnumerable<TSource>` and a `Func<TSource, TResult>` and when the current element is requested it returns the current element of the `IEnumerable<TSource>` with the `Func<TSource, TResult>` applied, therefore a `TResult` instance.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
