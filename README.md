@@ -36,6 +36,9 @@ dotnet new sln -n LinqTutorial &&
   sed -i '' 's/\r$//' LinqTutorial.Tests/LinqTutorial.Tests.csproj LinqTutorial.Tests/UnitTest1.cs LinqTutorial.sln
 ```
 
+### excercise-enumerables-001
+Your task is to implement `MyEnumerable` that is an implementor of `IEnumerable<int>`. It has a static method that is almost the same as `Enumerable.Range`, but `Enumerable.Range` takes two parameters: the start int, and the number of items to generate, but `MyEnumerable.Range` takes a start int and an end in exclusive.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
