@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using LinqTutorial.Implementation.Stables;
+
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace LinqTutorial.Tests.LinqBasics
@@ -28,6 +30,19 @@ namespace LinqTutorial.Tests.LinqBasics
             var range = (IEnumerable<int>)null;
 
             Assert.IsTrue(new[] { 1, 2, 3 }.SequenceEqual(range));
+        }
+
+        /*
+        Notice we have a new project in the solution: `LinqTutorial.Implementation`. It has one namespace currently with the new record type `LinqTutorial.Implementation.Stables.Horse`. For these line of excercises, you can assume this is a third-party library, therefore **you can not change the code of `LinqTutorial.Implementation`**. Your task is to make the test green (as always). Use the `Select` method to do so.
+        */
+        [TestMethod]
+        public void Select_CreatesHorses()
+        {
+            var range = Enumerable.Range(1, 3);
+
+            var result = (IEnumerable<Horse>)null;
+
+            Assert.IsTrue(new[] { new Horse(1), new Horse(2), new Horse(3) }.SequenceEqual(result));
         }
     }
 }
