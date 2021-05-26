@@ -92,7 +92,7 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
 
-            var result = (Dictionary<int, Horse>)null;
+            var result = horses.ToDictionary(horse => horse.Id);
 
             var expected = new Dictionary<int, Horse>()
             {
