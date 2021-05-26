@@ -69,6 +69,9 @@ Func<Horse, Luck> GetLuck = horse => horse.IsLucky ? Luck.Lucky : Luck.Unlucky;
 ```
 Google `C# extension methods` for a hint.
 
+### excercise-linq-basics-008
+The next dictionary you will need for your work is one that maps the Luck enum value to the number of horses there are in the enumerable. Google `Linq group by` for a hint. Notice that there are separate tests for method and query syntax solutions.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:

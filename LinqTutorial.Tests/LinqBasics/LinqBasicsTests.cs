@@ -128,5 +128,41 @@ namespace LinqTutorial.Tests.LinqBasics
             };
             CollectionAssert.AreEquivalent(expected, result);
         }
+
+        /*
+        The next dictionary you will need for your work is one that maps the Luck enum value to the number of horses there are in the enumerable. Google `Linq group by` for a hint. Use method syntax for this test.
+        */
+        [TestMethod]
+        public void GroupByWithMethodSyntax_GroupsHorsesByLuck()
+        {
+            var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
+
+            var result = (Dictionary<Luck, int>)null;
+
+            var expected = new Dictionary<Luck, int>()
+            {
+                { Luck.Lucky, 2 },
+                { Luck.UnLucky, 1 },
+            };
+            CollectionAssert.AreEquivalent(expected, result);
+        }
+
+        /*
+        The next dictionary you will need for your work is one that maps the Luck enum value to the number of horses there are in the enumerable. Google `Linq group by` for a hint. Use query syntax for this test.
+        */
+        [TestMethod]
+        public void GroupByWithQuerySyntax_GroupsHorsesByLuck()
+        {
+            var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
+
+            var result = (Dictionary<Luck, int>)null;
+
+            var expected = new Dictionary<Luck, int>()
+            {
+                { Luck.Lucky, 2 },
+                { Luck.UnLucky, 1 },
+            };
+            CollectionAssert.AreEquivalent(expected, result);
+        }
     }
 }
