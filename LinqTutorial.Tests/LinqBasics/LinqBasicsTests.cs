@@ -83,5 +83,24 @@ namespace LinqTutorial.Tests.LinqBasics
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(3) }.SequenceEqual(result));
         }
+
+        /*
+        Your task is to create a `Dictionary<int, Horse>` where the keys are the ids of the horses. You will need to use the `IEnumerable.ToDictionary` method. Note that there is no query syntax-equivalent of the `ToDictionary` method.
+        */
+        [TestMethod]
+        public void ToDictionary_CreatesDictionary()
+        {
+            var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
+
+            var result = (Dictionary<int, Horse>)null;
+
+            var expected = new Dictionary<int, Horse>()
+            {
+                { 1, new Horse(1) },
+                { 2, new Horse(2) },
+                { 3, new Horse(3) },
+            };
+            CollectionAssert.AreEquivalent(expected, result);
+        }
     }
 }

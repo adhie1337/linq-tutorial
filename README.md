@@ -51,6 +51,9 @@ The task is exactly the same as in 003, but you will have to use query syntax fo
 ### excercise-linq-basics-005
 Your task is to filter the horses to keep only the lucky ones with the `Where` method. Notice the new property `IsLucky` of the `Horse` type.
 
+### excercise-linq-basics-006
+Your task is to create a `Dictionary<int, Horse>` where the keys are the ids of the horses. You will need to use the `IEnumerable.ToDictionary` method. Note that there is no query syntax-equivalent of the `ToDictionary` method.
+
 
 ## To check the solution You have:
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
