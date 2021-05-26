@@ -53,7 +53,7 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var range = Enumerable.Range(1, 3);
 
-            var result = (IEnumerable<Horse>)null;
+            var result = from id in range select new Horse(id);
 
             Assert.IsTrue(new[] { new Horse(1), new Horse(2), new Horse(3) }.SequenceEqual(result));
         }
