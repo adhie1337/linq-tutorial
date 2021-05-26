@@ -17,5 +17,16 @@ namespace LinqTutorial.Tests.Enumerables
             var expected = Enumerable.Range(1, 9);
             Assert.IsTrue(expected.SequenceEqual(range));
         }
+
+        [TestMethod]
+        public void MySelect_AppliesFunction()
+        {
+            var range = Enumerable.Range(1, 9);
+
+            var result = range.MySelect(i => (char)(((int)'a') + i));
+
+            var expected = "bcdefghij";
+            Assert.IsTrue(expected.SequenceEqual(result));
+        }
     }
 }
