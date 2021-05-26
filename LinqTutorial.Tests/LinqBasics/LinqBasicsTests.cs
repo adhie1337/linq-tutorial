@@ -117,8 +117,7 @@ namespace LinqTutorial.Tests.LinqBasics
         {
             var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
 
-            // TODO: use horse.GetLuck() here instead of hardwired UnLucky value
-            var result = horses.ToDictionary(horse => horse.Id, horse => Luck.UnLucky);
+            var result = horses.ToDictionary(horse => horse.Id, horse => horse.GetLuck());
 
             var expected = new Dictionary<int, Luck>()
             {
