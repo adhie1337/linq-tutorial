@@ -14,7 +14,7 @@ namespace LinqTutorial.Tests.LinqBasics
         [TestMethod]
         public void EnumerableRepeat_ReturnsNElements()
         {
-            var range = (IEnumerable<int>)null;
+            var range = Enumerable.Repeat(0, 3);
 
             Assert.IsTrue(new[] { 0, 0, 0 }.SequenceEqual(range));
         }
