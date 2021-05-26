@@ -164,5 +164,47 @@ namespace LinqTutorial.Tests.LinqBasics
             };
             CollectionAssert.AreEquivalent(expected, result);
         }
+
+        /*
+        Note the new type `Bet` in `LinqTutorial.Implementation/Stables/Bet.cs`.
+
+        We have now horses as well as bets for the horses. If the horse is lucky the bet amount counts as positive, negative otherwise. Your task is to determine much win/loss there is for each bet. To determine that, you will need to join the two data sets together. Google `Linq join query syntax` for hints.
+        */
+        [TestMethod]
+        public void JoinWithQuerySyntax_JoinsDatasets()
+        {
+            var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
+            var bets =
+                from index in Enumerable.Range(1, 12)
+                let id = 1 + index % 3
+                let amount = 500 + 100 * (index % 6)
+                let userId = index % 5
+                select new Bet(id, "user_" + userId, amount);
+
+            var query = (IEnumerable<int>)null;
+
+            Assert.AreEqual(3000, query.Sum());
+        }
+
+        /*
+        Note the new type `Bet` in `LinqTutorial.Implementation/Stables/Bet.cs`.
+
+        We have now horses as well as bets for the horses. If the horse is lucky the bet amount counts as positive, negative otherwise. Your task is to determine much win/loss there is for each bet. To determine that, you will need to join the two data sets together. Google `Linq join method syntax` for hints.
+        */
+        [TestMethod]
+        public void JoinWithMethodSyntax_JoinsDatasets()
+        {
+            var horses = from id in Enumerable.Range(1, 3) select new Horse(id);
+            var bets = Enumerable.Range(1, 12).Select(i => new Bet
+            (
+                HorseId: 1 + i % 3,
+                User: "user_" + (i % 5),
+                Amount: 500 + 100 * (i % 6)
+            ));
+
+            var query = (IEnumerable<int>)null;
+
+            Assert.AreEqual(3000, query.Sum());
+        }
     }
 }
