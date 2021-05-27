@@ -41,6 +41,9 @@ Your task is to implement `MyEnumerable` that is an implementor of `IEnumerable<
 ### excercise-enumerables-002
 Your task is to implement `IEnumerable.MySelect` extension method. You will need to return an instance of `MySelectEnumerable` that is a wrapper enumerable; it takes an `IEnumerable<TSource>` and a `Func<TSource, TResult>` and when the current element is requested it returns the current element of the `IEnumerable<TSource>` with the `Func<TSource, TResult>` applied, therefore a `TResult` instance.
 
+### excercise-enumerables-003
+Your task is to implement `IEnumerable.MyWhere` extension method. You will need to return an instance of `MyWhereEnumerable` that is a wrapper enumerable; it takes an `IEnumerable<TSource>` and a `Func<TSource, bool>` and when the next element is requested it returns the next element that returns true for the `Func<TSource, bool>` function.
+
 
 Check your solution with running the following command (after making sure its safe of course). It will also print what to do for the next excercise:
 ```

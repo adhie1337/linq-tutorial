@@ -28,5 +28,16 @@ namespace LinqTutorial.Tests.Enumerables
             var expected = "bcdefghij";
             Assert.IsTrue(expected.SequenceEqual(result));
         }
+
+        [TestMethod]
+        public void MyWhere_FiltersResults()
+        {
+            var range = Enumerable.Range(1, 100000).Select(i => (char)(((int)'a') + i));
+
+            var result = range.MyWhere(char.IsUpper);
+
+            var expected = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            Assert.IsTrue(expected.SequenceEqual(result));
+        }
     }
 }
