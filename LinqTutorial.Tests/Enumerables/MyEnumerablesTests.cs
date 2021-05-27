@@ -34,5 +34,19 @@ namespace LinqTutorial.Tests.Enumerables
             var expected = "bcdefghij";
             Assert.IsTrue(expected.SequenceEqual(result));
         }
+
+        /*
+        Your task is to implement `IEnumerable.MyWhere` extension method. You will need to return an instance of `MyWhereEnumerable` that is a wrapper enumerable; it takes an `IEnumerable<TSource>` and a `Func<TSource, bool>` and when the next element is requested it returns the next element that returns true for the `Func<TSource, bool>` function.
+        */
+        [TestMethod]
+        public void MyWhere_FiltersResults()
+        {
+            var range = Enumerable.Range(1, 100).Select(i => (char)i);
+
+            var result = range.MyWhere(char.IsDigit);
+
+            var expected = "0123456789";
+            Assert.IsTrue(expected.SequenceEqual(result));
+        }
     }
 }
